@@ -6,24 +6,38 @@ import java.util.Date;
  * @version (a version number or a date)
  */
 public class ClassSession{
-    private boolean cancelled;
+    private static int classSessionCount = 0;
+    private int classSessionId;
     private Date sessionDate;
+    private double startTime;
+    private double endTime;
     
-    public ClassSession(Date date){
+    public ClassSession(Date date, double startTime, double endTime){
+        classSessionCount++;
+        classSessionId = classSessionCount;
         sessionDate = date;
-        cancelled = false;
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
+
+    public boolean updateSessionTime(double startTime, double endTime) {
+        if (endTime - startTime > 0){
+            this.startTime = startTime;
+            this.endTime = endTime;
+            return true;
+        }
+        return false;
     }
     
-    public boolean getSessionStatus(){
-        return cancelled;
+    public double getStartTime(){
+        return startTime;
     }
     
-    public void cancelSession(){
-        cancelled = true;
+    public double getEndTime(){
+        return endTime;
     }
     
-    //might remove
-    public void updateSessionDate(Date date) {
-        sessionDate = date;
+    public double getDuration(){
+        return endTime - startTime;
     }
 }
