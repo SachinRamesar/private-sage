@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Session
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Session\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=date\ startTime\ endTime
+comment1.target=Session(java.util.Date,\ double,\ double)
+comment2.params=
+comment2.target=java.util.Date\ getSessionDate()
+comment3.params=
+comment3.target=double\ getStartTime()
+comment4.params=
+comment4.target=double\ getEndTime()
+comment5.params=
+comment5.target=double\ getDuration()
+comment6.params=startTime\ endTime
+comment6.target=boolean\ updateSessionTime(double,\ double)
+comment6.text=\r\n\ \ \ \ public\ String\ getZoomLink(){\r\n\ \ \ \ \ \ \ \ return\ zoomLink;\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ }\r\n\ \ \ \ public\ void\ generateZoomLink(){\r\n\ \ \ \ \ \ \ \ zoomLink\ \=;\r\n\ \ \ \ }\r\n
+numComments=7
