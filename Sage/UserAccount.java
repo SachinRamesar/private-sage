@@ -12,8 +12,8 @@ public abstract class UserAccount {
     private String lastName;
     private String email;
     private String password;
-    private String phoneNumber;
-    //private ArrayList<Subject> subjects;
+    private String phoneNumber;     //removing most likely
+    private ArrayList<Subject> subjects;
     //private CreditCard creditCard;
     
     public UserAccount(String firstName, String lastName, String email, String password, String phoneNumber) {
@@ -24,15 +24,61 @@ public abstract class UserAccount {
         this.phoneNumber = phoneNumber;
         //setUserId();
     }
-   
-    //method to verify password and email
+    
+    //getters
+    public String getUserId(){
+        return userId;
+    }
+    
+    public String getFirstName(){
+        return firstName;
+    }
+    
+    public String getLastName(){
+        return lastName;
+    }
+    
+    public String getEmail(){
+        return email;
+    }
+    
+    public String getPassword(){
+        return password;
+    }
+    
+    public ArrayList<Subject> getSubjects(){
+        return subjects;
+    }
+    
+    //setters   
+    public void setFirstName(String firstName){
+        this.firstName = firstName;
+    }
+    
+    public void setLastName(String lastName){
+        this.lastName = lastName;
+    }
+    
+    public void setEmail(String email){
+        this.email = email;
+    }
+    
+    public void setPassword(String password){
+        this.password = password;
+    }
+    
+    public void setSubjects(ArrayList<Subject> subjectList){
+        this.subjects = new ArrayList<Subject>(subjectList);
+    }
+    
+    //methods
     public boolean verifyLogin(String email, String password) {
         if(this.password == password && this.email == email)
             return true;
         return false;
     }
     
-    //method to set userId where John Doe == john.doe and a next John Doe == john.doe1 similar to uwi email
+    //method to set userId where John Doe == john.doe and a next John Doe == john.doe1 similar to uwi email, uses database to 
     /*
      * private void setUserId() {
      *     int num = (checkUserId(firstName, lastName);

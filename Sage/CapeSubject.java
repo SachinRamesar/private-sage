@@ -19,11 +19,16 @@ public class CapeSubject implements Subject{
         this.unitNumber = unitNumber;
     }
     
+    //getters
     public String getName(){
         return subjectName;
     }
     
     public int getUnitNumber(){
         return unitNumber;
+    }
+    
+    public String toString(){
+        return subjectName + " Unit " + unitNumber;
     }
 }

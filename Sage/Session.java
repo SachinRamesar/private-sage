@@ -1,31 +1,24 @@
 import java.util.Date;
 /**
- * Write a description of class ClassSession here.
+ * Write a description of class Session here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class ClassSession extends Session{
-    private static int classSessionCount = 0;
-    private int classSessionId;
-    /*
+public class Session{
     private Date sessionDate;
     private double startTime;
     private double endTime;
-    //String zoomLink;
-    */
+    private String zoomLink;
     
-    public ClassSession(Date date, double startTime, double endTime){
-        super(date, startTime, endTime);
-        classSessionCount++;
-        classSessionId = classSessionCount;
+    public Session(Date date, double startTime, double endTime){
+        sessionDate = date;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        //generateZoomLink();
     }
-
+    
     //getters
-    public int getClassSessionId(){
-        return classSessionId;
-    }
-    /*
     public Date getSessionDate(){
         return sessionDate;
     }
@@ -45,9 +38,13 @@ public class ClassSession extends Session{
     /*
     public String getZoomLink(){
         return zoomLink;
+        
     }
-    
-   
+    public void generateZoomLink(){
+        zoomLink =;
+    }
+    */
+
     //setters
     public boolean updateSessionTime(double startTime, double endTime) {
         if (endTime - startTime > 0){
@@ -57,9 +54,4 @@ public class ClassSession extends Session{
         }
         return false;
     }
-    
-    //api to generate zoom link
-    public void setZoomLink(){
-    }
-    */
 }

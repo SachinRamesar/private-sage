@@ -6,38 +6,64 @@ import java.util.ArrayList;
  * @version (a version number or a date)
  */
 public class TutorAccount extends UserAccount{
-    // instance variables - replace the example below with your own
+
     private String userDescription;
     private double ratings;
     private int numberOfRatings;
-    //private ArrayList<Review> reviews;
-    //private ArrayList<Subject> subjects;
-    //private ArrayList<Class> classes;
-   
-
-   public TutorAccount(String fName, String lName, String email, String password, String phoneNumber) {
+    private ArrayList<Review> reviews;
+    private ArrayList<Class> classes;
+    
+    public TutorAccount(String fName, String lName, String email, String password, String phoneNumber) {
         super(fName, lName, email, password, phoneNumber);
         userDescription = "";
-        numberOfRatings = 0;
         ratings = 0.0;
-   }
+        numberOfRatings = 0;
+        reviews = new ArrayList<Review>();
+        classes = new ArrayList<Class>();
+    }
+   
+   //getters
+    public String getUserDescription(){
+       return userDescription;
+    }
     
-   public void setUserDescription(String description){
+    public double getRatings(){
+        return ratings;
+    }
+    
+    public int getNumberOfRatings(){
+        return numberOfRatings;
+    }
+    
+    public ArrayList<Review> getReviews(){
+        return reviews;
+    }
+    
+    public ArrayList<Class> getClasses(){
+        return classes;
+    }
+
+    //setters
+    public void setUserDescription(String description){
         userDescription = description;
-   }
-    
-   public void updateRating(double rating){
+    }
+   
+    public void updateRating(double rating){
         double totalRating = ratings * numberOfRatings;
-        numberOfRatings += 1;
+        numberOfRatings++;
         ratings =(totalRating + rating)/numberOfRatings * 1.0;
-        
-   }
-    /*
-    public void addReview(String review, StudentAccount student){
-        Review = new Review(review, 
+
+    }
+    
+    public void addReview(Review review){
         reviews.add(review);
     }
     
-    */
-
+    public void addClass(Class newClass){
+        classes.add(newClass);
+    }
+    
+    public void removeClass(Class newClass){
+        classes.remove(newClass);
+    }
 }

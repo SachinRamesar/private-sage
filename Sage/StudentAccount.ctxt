@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=StudentAccount
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ StudentAccount\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=fName\ lName\ email\ password\ phoneNumber\ educationLevel
+comment1.target=StudentAccount(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.util.ArrayList\ getClasses()
+comment3.params=
+comment3.target=java.util.ArrayList\ getStudySessions()
+comment4.params=
+comment4.target=java.lang.String\ getEducationLevel()
+comment5.params=educationLevel
+comment5.target=void\ setEducationLevel(java.lang.String)
+comment6.params=newClass
+comment6.target=void\ addClass(Class)
+comment7.params=newClass
+comment7.target=void\ removeClass(Class)
+comment8.params=studySession
+comment8.target=void\ addStudySession(StudySession)
+comment9.params=studySession
+comment9.target=void\ removeStudySession(StudySession)
+numComments=10

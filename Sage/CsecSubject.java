@@ -12,6 +12,7 @@ public class CsecSubject implements Subject{
         this.subjectName = subjectName;
     }
     
+    //getters
     public String getName(){
         return subjectName;
     }

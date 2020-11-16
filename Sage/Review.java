@@ -19,7 +19,29 @@ public class Review{
         count++;
         reviewId = count;
     }
-
+    
+    //getters
+    public int getReviewId(){
+        return reviewId;
+    }
+    
+    public String getReviewDescription(){
+        return reviewDescription;
+    }
+    
+    public int getVotes(){
+        return votes;
+    }
+    
+    public boolean isHidden(){
+        return hidden;
+    }
+    
+    //setters
+    public void setReviewDescription(String review){
+        reviewDescription = review;
+    }
+    
     public void upvote(){
         votes += 1;
     }

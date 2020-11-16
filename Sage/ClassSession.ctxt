@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=ClassSession
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ ClassSession\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=date\ startTime\ endTime
+comment1.target=ClassSession(java.util.Date,\ double,\ double)
+comment1.text=\r\n\ \ \ \ private\ Date\ sessionDate;\r\n\ \ \ \ private\ double\ startTime;\r\n\ \ \ \ private\ double\ endTime;\r\n\ \ \ \ //String\ zoomLink;\r\n
+comment2.params=
+comment2.target=int\ getClassSessionId()
+numComments=3

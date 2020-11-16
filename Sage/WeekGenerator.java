@@ -1,7 +1,7 @@
 import java.util.*;
 import java.time.Instant;
 import java.text.SimpleDateFormat;
-import ja
+
 /**
  * Write a description of class WeekGenerator here.
  *
@@ -11,7 +11,7 @@ import ja
 public class WeekGenerator{
     private SimpleDateFormat df = new SimpleDateFormat("EEE d MMM");
     
-    
+ /*   
     public static ArrayList<Date> getLastWeek() {  
         /*
         Date date = new Date();
@@ -20,13 +20,13 @@ public class WeekGenerator{
         c.setTime(date);
         
         int i = c.get(Calendar.DAY_OF_WEEK) - c.getFirstDayOfWeek();
-        */
-        DateTime date = new DateTime().withTimeAtStartOfDay();
-        DateTimeZone zone = DateTimeZone.forID("America/Port_of_Spain"); 
+        
+        //0DateTime date = new DateTime().withTimeAtStartOfDay();
+        //DateTimeZone zone = DateTimeZone.forID("America/Port_of_Spain"); 
         
         
     }
     //public static ArrayList<Date> getCurrentWeek();
-
+*/
     
 }
