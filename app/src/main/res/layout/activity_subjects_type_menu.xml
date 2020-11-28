@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.subjectsTypeMenu.SubjectsTypeMenu">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.Sage.AppBarOverlay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/subjectsLevelMenuToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.Sage.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/capeCardView"
+        androidforeground="?android:attr/selectableItemBackground"
+        android:layout_width="125dp"
+        android:layout_height="342dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="150dp"
+        android:clickable="true"
+        app:cardCornerRadius="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="167dp"
+                android:layout_marginBottom="20dp"
+                android:background="#2d2d2c"
+                android:src="@drawable/cape_logo" />
+
+            <TextView
+                android:id="@+id/capeInfoTextView1"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:text="\u2022 15 Classes"
+                android:textColor="#2d2d2d"
+                android:textSize="14sp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:id="@+id/capeInfoTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:text="\u2022 7 Tutors"
+                android:textColor="#2d2d2d"
+                android:textSize="14sp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:id="@+id/capeInfoTextView3"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:text="\u2022 12 Study Sessions"
+                android:textColor="#2d2d2d"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/csecCardView"
+        androidforeground="?android:attr/selectableItemBackground"
+        android:layout_width="125dp"
+        android:layout_height="342dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="150dp"
+        android:clickable="true"
+        app:cardCornerRadius="4dp"
+        app:layout_constraintStart_toEndOf="@+id/capeCardView"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="167dp"
+                android:layout_marginBottom="20dp"
+                android:background="#dcdcdc"
+                android:src="@drawable/csec_logo" />
+
+            <TextView
+                android:id="@+id/csecInfoTextView1"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:text="\u2022 20 Classes"
+                android:textColor="#2d2d2d"
+                android:textSize="14sp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:id="@+id/csecInfoTextView2"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:text="\u2022 10 Tutors"
+                android:textColor="#2d2d2d"
+                android:textSize="14sp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:id="@+id/csecInfoTextView3"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:gravity="center"
+                android:text="\u2022 5 Study Sessions"
+                android:textColor="#2d2d2d"
+                android:textSize="14sp" />
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
