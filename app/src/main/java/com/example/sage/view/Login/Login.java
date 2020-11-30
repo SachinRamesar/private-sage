@@ -2,11 +2,17 @@ package com.example.sage.view.Login;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.sage.R;
+import com.example.sage.model.StudentAccount;
 import com.example.sage.model.TutorAccount;
 import com.example.sage.model.UserAccount;
 import com.example.sage.view.MainActivity;
 import com.example.sage.view.Register.Register;
 import com.example.sage.view.subjectsTypeMenu.SubjectsTypeMenu;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -22,45 +28,63 @@ import java.util.Iterator;
 
 public class Login extends AppCompatActivity {
 
-    Button loginButton;
-    EditText usernameEditText;
-    EditText passwordEditText;
-    TextView createAccountTextView;
-    PasswordMgr passwordMgr;
+    private Button loginButton;
+    private EditText emailEditText;
+    private EditText passwordEditText;
+    private TextView createAccountTextView;
 
+    private PasswordMgr passwordMgr;
+
+    private DatabaseReference ref;
+    private java.util.List<UserAccount> userAccounts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        ref= FirebaseDatabase.getInstance().getReference();
+        userAccounts = new ArrayList<>();
+        loadUserData();
+
         loginButton = (Button) findViewById(R.id.loginButton);
-        usernameEditText = (EditText) findViewById(R.id.username);
+        emailEditText = (EditText) findViewById(R.id.email);
         passwordEditText = (EditText) findViewById(R.id.password);
+
         createAccountTextView = (TextView) findViewById(R.id.createAccountTextView);
 
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String u_name, p_word;
+                String u_email, p_word;
 
-                u_name = usernameEditText.getText().toString();
+                u_email = emailEditText.getText().toString();
                 p_word = passwordEditText.getText().toString();
 
-                /*Code to retrieve all user accounts from database and check if exist*/
-                /*
-                ArrayList<UserAccount> userAccounts = getUserAccounts();
+                MainActivity.myUser = null;
                 Iterator iter = userAccounts.iterator();
                 while(iter.hasNext()){
                     UserAccount u_account = (UserAccount)iter.next();
-                    if(u_account.getUserName().equals(u_name)){
-                        passwordMgr.isExpectedPassword(p_word);
+                    System.out.println("1 "+u_account.getEmail().toLowerCase());
+                    if(u_account.getEmail().toLowerCase().equals(u_email.toLowerCase())){
+                        System.out.println("2: "+u_account.getEmail().toLowerCase());
+                        //passwordMgr.isExpectedPassword(p_word);  to be implemented
+                        if(u_account.getPassword().equals(p_word)){
+                            MainActivity.myUser=u_account;
+                        }
+
                     }
                 }
-                */
-                Intent intent = new Intent(Login.this, SubjectsTypeMenu.class);
-                startActivity(intent);
+
+                if(MainActivity.myUser != null){
+                    Intent intent = new Intent(Login.this, SubjectsTypeMenu.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(Login.this,"Please enter a valid email and password",Toast.LENGTH_SHORT).show();
+                }
+
+
 
 
             }
@@ -88,6 +112,7 @@ public class Login extends AppCompatActivity {
                 String name = data.getStringExtra("name");
                 Toast.makeText(Login.this, name +
                         ", your account has been Successfully created.", Toast.LENGTH_LONG).show();
+                recreate();
 
             }
             if (resultCode == Activity.RESULT_CANCELED) {
@@ -96,10 +121,41 @@ public class Login extends AppCompatActivity {
         }
     }//onActivityResult
 
-    private ArrayList<UserAccount> getUserAccounts(){
+    public void loadUserData(){
 
-        return null;
+        ValueEventListener usersListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Get Post object and use the values to update the UI
+                UserAccount userAccount=null;
+
+                for(DataSnapshot snapshot: dataSnapshot.getChildren()){
+
+
+                    for(DataSnapshot s: snapshot.getChildren()){
+
+
+                        if(snapshot.getKey().equals("Tutors")){
+                            userAccount= s.getValue(TutorAccount.class);
+                        } else if(snapshot.getKey().equals("Students")) {
+                            userAccount = s.getValue(StudentAccount.class);
+                        }
+
+                        userAccounts.add(userAccount);
+
+                    }
+
+                }
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+        ref.child("Users").addListenerForSingleValueEvent(usersListener);
     }
+
 
 
 }

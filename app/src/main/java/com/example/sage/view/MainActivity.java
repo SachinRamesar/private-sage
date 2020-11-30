@@ -14,6 +14,7 @@ import com.example.sage.R;
 import com.example.sage.model.Class;
 import com.example.sage.model.SubjectCatalogue;
 import com.example.sage.model.TutorAccount;
+import com.example.sage.model.UserAccount;
 import com.example.sage.view.Class.CreateClass;
 import com.example.sage.view.Login.Login;
 import com.example.sage.view.subjectsMenu.SubjectsMenu;
@@ -30,17 +31,20 @@ public class MainActivity extends AppCompatActivity {
 
     private Button nextScreen;
     private Button nextScreen2;
+
+    public static UserAccount myUser;
+
+
     private static List<Class> classes = new ArrayList<>();
     public static void addToClass(Class c){
         classes.add(c);
     }
 
-
     /* test code for database*/
     private Button buttonUpdate;
     private EditText updateEditText;
     private TextView printTextView;
-    public DatabaseReference ref;
+    private DatabaseReference ref;
     /*end*/
 
 
@@ -77,37 +81,39 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+        ref = FirebaseDatabase.getInstance().getReference();
 
         /*test code for database*/
+
 
         printTextView = findViewById(R.id.printTextView);
         updateEditText = findViewById(R.id.updateEditText);
         buttonUpdate = findViewById(R.id.buttonUpdate);
 
-        ref = FirebaseDatabase.getInstance().getReference();
 
-        /*write code*/
 
-        TutorAccount t = new TutorAccount("fname","lname","email@email.com","password","1213123");
-        TutorAccount t2 = new TutorAccount("Phil","Roberts","phil@email.com","pw","123123");
+        //write code
+
+        //TutorAccount t = new TutorAccount("fname","lname","email@email.com","password");
+        //TutorAccount t2 = new TutorAccount("Phil","Roberts","phil@email.com","pw");
 
 
 
         buttonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s = updateEditText.getText().toString();
-                ref.child("Tutor").child("1").child("email").setValue(s);
+                //String s = updateEditText.getText().toString();
+                TutorAccount t = new TutorAccount("fname","lname", updateEditText.getText().toString(),"password");
+                ref.child("Users").child("Tutors").child("1").setValue(t);
 
                 //you may use getKey() method to get the id of node that changed in the database
             }
         });
 
-        /*end write*/
 
 
-        /*read code*/
+        /*
+        //read code
 
         ValueEventListener postListener = new ValueEventListener() {
             @Override
@@ -126,15 +132,9 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        ref.child("Tutor").child("1").addValueEventListener(postListener);
+        ref.child("Users").child("Tutors").child("1").addValueEventListener(postListener);
+        */
 
-        /*end read*/
-
-
-
-
-
-        /*end*/
 
 
 

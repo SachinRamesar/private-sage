@@ -19,8 +19,8 @@ public class TutorAccount extends UserAccount{
 
     }
     
-    public TutorAccount(String fName, String lName, String email, String password, String phoneNumber) {
-        super(fName, lName, email, password, phoneNumber);
+    public TutorAccount(String fName, String lName, String email, String password) {
+        super(fName, lName, email, password);
         userDescription = "";
         ratings = 0.0;
         numberOfRatings = 0;
@@ -50,6 +50,25 @@ public class TutorAccount extends UserAccount{
     }
 
     //setters
+
+
+
+    public void setRatings(double ratings) {
+        this.ratings = ratings;
+    }
+
+    public void setNumberOfRatings(int numberOfRatings) {
+        this.numberOfRatings = numberOfRatings;
+    }
+
+    public void setReviews(ArrayList<Review> reviews) {
+        this.reviews = reviews;
+    }
+
+    public void setClasses(ArrayList<Class> classes) {
+        this.classes = classes;
+    }
+
     public void setUserDescription(String description){
         userDescription = description;
     }

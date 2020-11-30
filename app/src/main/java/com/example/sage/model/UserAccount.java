@@ -9,12 +9,10 @@ import java.util.Objects;
  * @version (version number or date here)
  */
 public abstract class UserAccount {
-    private String username;
     private String firstName;
     private String lastName;
     private String email;
     private String password;
-    private String phoneNumber;     //removing most likely
     private ArrayList<Subject> subjects;
     //private CreditCard creditCard;
 
@@ -22,20 +20,18 @@ public abstract class UserAccount {
 
     }
     
-    public UserAccount(String firstName, String lastName, String email, String password, String phoneNumber) {
+    public UserAccount(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.phoneNumber = phoneNumber;
         //setUsername();
     }
     
     //getters
-    public String getUserName(){
-        return username;
-    }
-    
+
+
+
     public String getFirstName(){
         return firstName;
     }

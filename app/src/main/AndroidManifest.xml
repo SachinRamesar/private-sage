@@ -18,7 +18,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.Register.Register" />
+        <activity android:name=".view.Register.Register"
+            android:theme="@style/Theme.Sage.NoActionBar"/>
+
         <activity android:name=".view.Login.Login" />
 
         <activity
