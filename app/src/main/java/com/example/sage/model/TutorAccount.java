@@ -14,6 +14,10 @@ public class TutorAccount extends UserAccount{
     private int numberOfRatings;
     private ArrayList<Review> reviews;
     private ArrayList<Class> classes;
+
+    public TutorAccount(){
+
+    }
     
     public TutorAccount(String fName, String lName, String email, String password, String phoneNumber) {
         super(fName, lName, email, password, phoneNumber);

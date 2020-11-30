@@ -47,6 +47,8 @@ public class Login extends AppCompatActivity {
 
                 u_name = usernameEditText.getText().toString();
                 p_word = passwordEditText.getText().toString();
+
+                /*Code to retrieve all user accounts from database and check if exist*/
                 /*
                 ArrayList<UserAccount> userAccounts = getUserAccounts();
                 Iterator iter = userAccounts.iterator();

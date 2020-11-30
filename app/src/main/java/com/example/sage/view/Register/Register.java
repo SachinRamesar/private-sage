@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.sage.R;
+import com.example.sage.model.StudentAccount;
 
 import org.w3c.dom.Text;
 
@@ -45,6 +46,16 @@ public class Register extends AppCompatActivity {
             public void onClick(View v) {
                 String name = nameEditText.getText().toString();
                 //if check for all fields
+
+                /*Code to save to database*/
+
+
+
+
+                /*end*/
+
+
+
 
                 Intent returnIntent = new Intent();
                 returnIntent.putExtra(name,name);

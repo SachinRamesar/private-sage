@@ -17,6 +17,10 @@ public abstract class UserAccount {
     private String phoneNumber;     //removing most likely
     private ArrayList<Subject> subjects;
     //private CreditCard creditCard;
+
+    public UserAccount(){
+
+    }
     
     public UserAccount(String firstName, String lastName, String email, String password, String phoneNumber) {
         this.firstName = firstName;

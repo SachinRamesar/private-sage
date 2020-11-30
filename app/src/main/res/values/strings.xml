@@ -3,7 +3,7 @@
 
     <string-array name="account_type">
         <item name="tutor">Tutor</item>
-        <item name="teacher">Teacher</item>
+        <item name="teacher">Student</item>
     </string-array>
     <string name="title_activity_class_screen">Classes</string>
     <!-- Strings used for fragments for navigation -->
