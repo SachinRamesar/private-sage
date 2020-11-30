@@ -50,10 +50,10 @@ public class Register extends AppCompatActivity {
         getSupportActionBar().setTitle("New User");
 
         //load data
-
         ref= FirebaseDatabase.getInstance().getReference();
         userAccounts = new ArrayList<>();
         loadUserData();
+        //end load data
 
 
         test= (TextView) findViewById(R.id.test);

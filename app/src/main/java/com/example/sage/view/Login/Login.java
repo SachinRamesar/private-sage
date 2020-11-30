@@ -66,9 +66,7 @@ public class Login extends AppCompatActivity {
                 Iterator iter = userAccounts.iterator();
                 while(iter.hasNext()){
                     UserAccount u_account = (UserAccount)iter.next();
-                    System.out.println("1 "+u_account.getEmail().toLowerCase());
                     if(u_account.getEmail().toLowerCase().equals(u_email.toLowerCase())){
-                        System.out.println("2: "+u_account.getEmail().toLowerCase());
                         //passwordMgr.isExpectedPassword(p_word);  to be implemented
                         if(u_account.getPassword().equals(p_word)){
                             MainActivity.myUser=u_account;

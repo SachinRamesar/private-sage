@@ -31,7 +31,7 @@ public class ViewClasses extends AppCompatActivity {
         setContentView(R.layout.activity_view_classes);
         subjectName = getIntent().getStringExtra("subject");
         subjectType = getIntent().getStringExtra("subjectType");
-
+        
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(subjectType+" "+subjectName);
