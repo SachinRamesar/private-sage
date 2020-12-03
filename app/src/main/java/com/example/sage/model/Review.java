@@ -10,13 +10,13 @@ public class Review{
     private static int count = 0;
     private int reviewId;
     private String reviewDescription;
-    private int votes;
-    private boolean hidden;
+    private int upVotes;
+    private int downVotes;
     
     public Review(String reviewDescription){
         this.reviewDescription = reviewDescription;
-        votes = 1;
-        hidden = false;
+        upVotes = 0;
+        downVotes = 0;
         count++;
         reviewId = count;
     }
@@ -30,12 +30,12 @@ public class Review{
         return reviewDescription;
     }
     
-    public int getVotes(){
-        return votes;
+    public int getUpVotes(){
+        return upVotes;
     }
     
-    public boolean isHidden(){
-        return hidden;
+    public int getDownVotes(){
+        return downVotes;
     }
     
     //setters
@@ -43,13 +43,12 @@ public class Review{
         reviewDescription = review;
     }
     
-    public void upvote(){
-        votes += 1;
+    public void upVote(){
+        upVotes += 1;
     }
-    
-    public void downvote(){
-        votes -= 1;
-        if (votes < -10)
-            hidden = true;
+
+    public void downVote(){
+        downVotes += 1;
     }
+
 }

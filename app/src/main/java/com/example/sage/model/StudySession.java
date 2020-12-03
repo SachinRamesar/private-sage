@@ -9,7 +9,7 @@ import java.util.Date;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class StudySession extends Session{
+public class StudySession extends Session{  //to be chagnged to study group
     private static int studySessionCount = 0;
     private String studySessionDescription;
     private Subject subject;
@@ -25,7 +25,7 @@ public class StudySession extends Session{
         super(startDateTime, endDateTime, zoomlink);
         studySessionCount++;
         sessionId = studySessionCount;
-        this.studySessionDescription = studySessionDescription;
+        this.studySessionDescription = description;
         this.subject = subject;
         this.studySessionCapacity = capacity;
         students = new ArrayList<StudentAccount>();
